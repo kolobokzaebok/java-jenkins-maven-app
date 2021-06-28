@@ -12,16 +12,16 @@ pipeline {
                 echo 'building a new .war file from the pulled code...'
                 sh "mvn clean install"
                 echo 'building docker image...'
-//                script {
-//                    app = docker.build("kolobokzaebok/java-jenkins-maven-app")
-//                }
+                script {
+                    app = docker.build("kolobokzaebok/java-jenkins-maven-app")
+                }
                 echo 'pushing to docker hub...'
-//                script {
-//                    docker.withRegistry('https://registry.hub.docker.com', 'dockerHub') {
-//                        app.push("${env.BUILD_NUMBER}")
-//                        app.push("latest")
-//                    }
-//                }
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockerHub') {
+                        app.push("${env.BUILD_NUMBER}")
+                        app.push("latest")
+                    }
+                }
             }
 
         }
