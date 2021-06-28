@@ -2,7 +2,7 @@ def app
 pipeline {
     agent any
     tools {
-        maven 'apache-maven-3.8.1'
+        maven 'maven'
     }
     stages {
         stage("compilation") {
