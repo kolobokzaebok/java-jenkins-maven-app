@@ -30,6 +30,14 @@ pipeline {
         stage("deployment") {
             steps {
                 echo 'deployment stage...'
+                echo 'pulling from docker hub...'
+                script {
+                    docker.image("kolobokzaebok/java-jenkins-maven-app:latest").pull()
+                }
+                echo 'running the java-jenkins-maven-app from the latest image downloaded from docker hub'
+                script {
+                    sh "docker run -d -p 7777:8080 kolobokzaebok/java-jenkins-maven-app:latest"
+                }
             }
         }
     }
