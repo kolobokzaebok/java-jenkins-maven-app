@@ -1,9 +1,6 @@
 def app
 pipeline {
     agent any
-    tools {
-        maven 'maven'
-    }
     stages {
         stage("compilation") {
             steps {
@@ -28,18 +25,11 @@ pipeline {
         stage("test") {
             steps {
                 echo 'test stage...'
-//                script {
-//                    sh "docker run -d -p 7777:8080 kolobokzaebok/java-jenkins-maven-app:latest"
-//                }
             }
         }
         stage("deployment") {
             steps {
                 echo 'deployment stage...'
-                echo 'pulling from docker hub...'
-//                script {
-//                    docker.image("kolobokzaebok/java-jenkins-maven-app:latest").pull()
-//                }
             }
         }
     }
