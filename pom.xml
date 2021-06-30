@@ -40,6 +40,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${project.parent.version}</version>
+				<configuration>
+					<finalName>java-jenkins-maven-app</finalName>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

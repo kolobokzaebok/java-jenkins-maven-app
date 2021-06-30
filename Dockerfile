@@ -1,10 +1,10 @@
-FROM tomcat:8.0-alpine
+FROM tomcat:latest
 
 LABEL description="SimplyLearn Java Maven Jenkins Demo Project"
 
 EXPOSE 8080
 
-ADD ./target/demo-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
+ADD ./target/java-jenkins-maven-app.war /usr/local/tomcat/webapps/
 
 CMD ["catalina.sh", "run"]
 
