@@ -41,5 +41,10 @@ pipeline {
                 }
             }
         }
+        stage("cleanup") {
+            steps {
+                echo 'cleanup...'
+            }
+        }
     }
 }
