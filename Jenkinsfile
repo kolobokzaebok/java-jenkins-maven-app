@@ -44,6 +44,9 @@ pipeline {
         stage("cleanup") {
             steps {
                 echo 'cleanup...'
+                script {
+                    sh "docker rm -f \$(docker ps -aq)"
+                }
             }
         }
     }
